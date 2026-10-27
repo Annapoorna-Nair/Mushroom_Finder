@@ -12,7 +12,7 @@ Share pictures, ask questions, and interact with other users in the Mushroom Com
 The app is designed for nature enthusiasts, mushroom collectors, and people interested in learning about edible and poisonous mushroom species.
 
 ### Logo
-![Project Logo](./Images/IMG_1233.png)
+<img src="https://github.com/Annapoorna-Nair/Mushroom_Finder/blob/master/Images/IMG_1233.PNG" alt="Project Logo" width="300">
 
 ### Data Feeds
 https://www.kaggle.com/datasets/benedictusjason/edible-and-poisonous-mushroom-classification
@@ -23,7 +23,7 @@ https://www.kaggle.com/datasets/benedictusjason/edible-and-poisonous-mushroom-cl
 https://canva.link/pbi6jcuj2u5rf6o
 
 ### Class diagram
-![Class diagram](./Images/Untitled(7).png)
+<img src="https://github.com/Annapoorna-Nair/Mushroom_Finder/raw/master/Images/Untitled%20(7).png" alt="Project Logo" width="600">
 
 ### Function Requirements 
 #### Requirement 100: Enter Mushroom Information
