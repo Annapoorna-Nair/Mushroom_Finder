@@ -118,6 +118,10 @@ Sara Bahojb Ghods
 
 Chau Trinh 
 
+### Project Board
+This project board uses to discuss weekly tasks 
+https://mailuc-my.sharepoint.com/:f:/r/personal/bahojbsa_mail_uc_edu/Documents/Group_Project_Cloud_Integration?d=w7831c547d2444139b21d755227ce5e09&csf=1&web=1&e=wSZ1PW
+
 ### Weekly Meeting 
 Once a week and every Thursday at 1:30pm. 
 
