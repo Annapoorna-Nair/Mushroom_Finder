@@ -85,7 +85,7 @@ When user open its details
 
 Then the application should display that requirement and a warning that cooking does not make an unidentified or poisonous mushroom safe.
 
-### Requirement 103: Mushroom Community (do we want to add this idea here at this time or should we wait to hear prof’s feedback)
+### Requirement 103: Mushroom Community (We wait to hear Professor’s thought on this section)
 #### Scenario
 As a user interested in mushrooms, I want to interact with other users by sharing mushroom pictures, asking questions, and discussing mushroom species so that I can learn from their experiences.
 #### Dependencies
