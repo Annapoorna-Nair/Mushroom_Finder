@@ -34,16 +34,17 @@ A mushroom database is available and accessible.
 ##### Assumptions
 Users can recognize some basic mushroom characteristics. Each initial question has predefined answer options.
 ###### Example
-Given the mushroom identification form is available
+Given I found an interesting mushroom and the mushroom identification form is available
 
 When I enter the following information:
-- Color: Brown
-- Location: On wood
+- Color: Yellow, White
+- Location: On wood, Western Ohio
 - Shape: Rounded
 - Width: Medium
 - Height: Short
+- Special features: Very textured
   
-Then the application should accept my information and begin searching for possible mushroom matches.
+Then the application should accept my information and pull up something like the Fly Agaric Mushroom.
 
 ### Requirement 101: Ask Additional Questions
 #### Scenario
