@@ -1,15 +1,15 @@
 # Mushroom Identification App — Design Document
 
 ### Introduction
-Have you ever found a mushroom in the woods but were unsure what type it was? Many mushrooms look very similar, even though they may have different characteristics and toxicity levels.
-The Mushroom Identification App helps users explore and identify possible mushroom species based on their physical appearance, growing environment, and other characteristics.
-The app will help users:
-Enter mushroom information and answer questions to identify possible species.
-Answer additional questions when more details are needed.
-View mushroom matches with pictures, descriptions, and similar-looking species.
-Learn about mushroom toxicity, safety warnings, and preparation requirements.
-Share pictures, ask questions, and interact with other users in the Mushroom Community.
-The app is designed for nature enthusiasts, mushroom collectors, and people interested in learning about edible and poisonous mushroom species.
+Have you ever found a mushroom in the woods but you had no clue what it was? Do you want to learn more about foraging mushrooms safely? Mushroom Finder is here to help:
+
+- Helps identify mushroom through a few short questions
+- Learn what mushrooms are poisonous
+- Learn how to properly prep edible mushrooms for safe eating
+- Learn what edible mushrooms are in your region
+- Share pictures, ask/answer questions, and interact with other users in the Mushroom Finder community
+
+The app is perfect for nature enthusiasts, foraging enthusiasts, and people interested in learning more about mushrooms in general.
 
 ### Logo
 <img src="https://github.com/Annapoorna-Nair/Mushroom_Finder/blob/master/Images/IMG_1233.PNG" alt="Project Logo" width="300">
