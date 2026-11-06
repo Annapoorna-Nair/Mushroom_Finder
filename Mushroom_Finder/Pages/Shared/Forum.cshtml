@@ -1,0 +1,47 @@
+﻿@page
+@model Mushroom_Finder.Pages.Shared.ForumModel
+@{
+    ViewData["Title"] = "Forum";
+}
+
+<section class="panel-frame">
+
+    <aside class="forum-sidebar">
+
+        <div class="panel forum-actions">
+            <div class="forum-actions-logo">
+                @* mascot image goes here later *@
+            </div>
+            <button type="button" class="action-btn">ID Request</button>
+            <button type="button" class="action-btn">Just Sharing</button>
+        </div>
+
+        <div class="panel forum-intro">
+            <p>
+                This is the go to place to ID mushrooms and see what others are finding.
+                Make sure to put your general location in [square brackets] in your post title.
+            </p>
+        </div>
+
+    </aside>
+
+    <div class="panel forum-feed">
+
+        <article class="post">
+            <div class="post-user">
+                <span class="post-user-name">User</span>
+                <span class="post-avatar"></span>
+            </div>
+
+            <div class="post-image">
+                @* post photo goes here later *@
+            </div>
+
+            <div class="post-actions">
+                <button type="button" class="action-btn action-btn-small">ID Request</button>
+            </div>
+        </article>
+
+    </div>
+
+</section>
