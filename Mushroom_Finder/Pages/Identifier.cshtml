@@ -1,0 +1,371 @@
+﻿@page
+@model Mushroom_Finder.Pages.IdentifierModel
+@{
+}
+
+<!--
+    Quetsions
+-->
+
+<form>
+    <h2>Color</h2>
+    <details>
+        <summary>Select up to 2 Colors</summary>
+
+        <label>
+            <input type="checkbox" name="color" value="Red">
+            Red
+        </label>
+
+        <label>
+            <input type="checkbox" name="color" value="Orange">
+            Orange
+        </label>
+
+        <label>
+            <input type="checkbox" name="color" value="Yellow">
+            Yellow
+        </label>
+
+        <label>
+            <input type="checkbox" name="color" value="Green">
+            Green
+        </label>
+        <label>
+            <input type="checkbox" name="color" value="Green">
+            Blue
+        </label>
+        <label>
+            <input type="checkbox" name="color" value="Green">
+            Purple
+        </label>
+        <label>
+            <input type="checkbox" name="color" value="Green">
+            Pink
+        </label>
+        <label>
+            <input type="checkbox" name="color" value="Green">
+            Brown
+        </label>
+        <label>
+            <input type="checkbox" name="color" value="Green">
+            White
+        </label>
+        <label>
+            <input type="checkbox" name="color" value="Green">
+            Gray
+        </label>
+        <label>
+            <input type="checkbox" name="color" value="Green">
+            Black
+        </label>
+    </details>
+
+    <h2>Where did you find it?</h2>
+    <details>
+        <summary>Select...</summary>
+
+        <label>
+            <input type="checkbox" name="location" value="On a tree">
+            On a tree
+        </label>
+
+        <label>
+            <input type="checkbox" name="location" value="On the ground">
+            On the ground
+        </label>
+
+        <label>
+            <input type="checkbox" name="location" value="On a tree root">
+            On a tree root
+        </label>
+
+        <label>
+            <input type="checkbox" name="location" value="On a stump, log, or dead tree">
+            On a stump, log, or dead tree
+        </label>
+    </details>
+
+    <h2>Cap Shape</h2>
+    <details>
+        <summary>Select...</summary>
+
+        <label>
+            <input type="radio" name="cap shape" value="Funnel">
+            Funnel
+        </label>
+
+        <label>
+            <input type="radio" name="cap shape" value="Cone-shaped">
+            Cone-shaped
+        </label>
+
+        <label>
+            <input type="radio" name="cap shape" value="Bell shaped">
+            Bell shaped
+        </label>
+
+        <label>
+            <input type="radio" name="cap shape" value="Half-Egg">
+            Half-Egg
+        </label>
+
+        <label>
+            <input type="radio" name="cap shape" value="Round">
+            Round
+        </label>
+
+        <label>
+            <input type="radio" name="cap shape" value="Flat">
+            Flat
+        </label>
+
+        <label>
+            <input type="radio" name="cap shape" value="Central knob">
+            Central knob
+        </label>
+
+        <label>
+            <input type="radio" name="cap shape" value="Depression">
+            Depression
+        </label>
+    </details>
+
+    <h2>Height</h2>
+    <details>
+        <summary>Select...</summary>
+
+        <label>
+            <input type="radio" name="height" value="Short">
+            Short
+        </label>
+
+        <label>
+            <input type="radio" name="height" value="Medium">
+            Medium
+        </label>
+
+        <label>
+            <input type="radio" name="height" value="Tall">
+            Tall
+        </label>
+    </details>
+
+    <h2>Width</h2>
+    <details>
+        <summary>Select...</summary>
+
+        <label>
+            <input type="radio" name="width" value="Thin">
+            Thin
+        </label>
+
+        <label>
+            <input type="radio" name="width" value="Medium">
+            Medium
+        </label>
+
+        <label>
+            <input type="radio" name="width" value="Wide">
+            Wide
+        </label>
+    </details>
+
+    <h2>Distinctive Features</h2>
+    <details>
+        <summary>Select...</summary>
+
+        <label>
+            <input type="radio" name="special features" value="Leaking red liquid">
+            Leaking red liquid
+        </label>
+
+        <label>
+            <input type="radio" name="special features" value="Cap looks like a net">
+            Cap looks like a net
+        </label>
+
+        <label>
+            <input type="radio" name="special features" value="Has small dots on cap">
+            Has small dots on cap
+        </label>
+    </details>
+
+    <!--
+        Questions past this point will be structure to only appear if the results
+        bring up more than 1 result and further clarification is needed. Will be handled later
+        once we connect the database so I can actually see if it works.
+    -->
+
+    <h2>Gills</h2>
+    <details>
+        <summary>Select...</summary>
+
+        <label>
+            <input type="radio" name="gills" value="Adnate">
+            Adnate
+        </label>
+
+        <label>
+            <input type="radio" name="gills" value="Adnexed">
+            Adnexed
+        </label>
+
+        <label>
+            <input type="radio" name="gills" value="Decurrent">
+            Decurrent
+        </label>
+
+        <label>
+            <input type="radio" name="gills" value="Emarginate">
+            Emarginate
+        </label>
+
+        <label>
+            <input type="radio" name="gills" value="Free">
+            Free
+        </label>
+
+        <label>
+            <input type="radio" name="gills" value="Seceding">
+            Seceding
+        </label>
+
+        <label>
+            <input type="radio" name="gills" value="Sinuate">
+            Sinuate
+        </label>
+
+        <label>
+            <input type="radio" name="gills" value="Subedecurrent">
+            Subdecurrent
+        </label>
+    </details>
+
+    <h2>Stem Shape</h2>
+    <details>
+        <summary>Select...</summary>
+
+        <label>
+            <input type="radio" name="stem shape" value="Equal">
+            Equal
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Tapering">
+            Tapering
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Club">
+            Club
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Bulbous">
+            Bulbous
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Swollen">
+            Swollen
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Tapering">
+            Tapering
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Rooting">
+            Rooting
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Saccate">
+            Saccate
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Friable">
+            Friable
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Bare">
+            Bare
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Loose">
+            Loose
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Felt-like">
+            Felt-like
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Skirt">
+            Skirt
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Flaring">
+            Flaring
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Cortina">
+            Cortina
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Sheathing">
+            Sheathing
+        </label>
+
+        <label>
+            <input type="radio" name="stem shap" value="Double">
+            Double
+        </label>
+
+    </details>
+
+    <h2>Clustering</h2>
+    <details>
+        <summary>Select...</summary>
+
+        <label>
+            <input type="radio" name="clustering" value="Has many similar mushrooms near it">
+            Has many similar mushrooms near it
+        </label>
+
+        <label>
+            <input type="radio" name="clustering" value="Has very few similar mushrooms near it">
+            Has very few similar mushrooms near it
+        </label>
+
+
+    </details>
+
+</form>
+
+<button> Search</button>
+
+<!-- Window to bring up the result, this will be adjusted to be responsive with the submission lateron but as of right now I'm just placing the text to get the right formatting-->
+
+<div style="float:right; width:55%; text-align:center;">
+
+    <h2>Species Name</h2>
+    <h3>Scientific Name</h3>
+
+    <img src="https://s7d9.scene7.com/is/image/daltile/AO_MN44_24x24_Gray_Polished?$PRODUCTIMAGE$"
+         style="width:250px;height:250px;" />
+
+    <h3>Poison or Not Poison</h3>
+
+    <h3>Info / Poison Control</h3>
+
+</div>
