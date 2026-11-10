@@ -17,7 +17,6 @@ The app is perfect for nature enthusiasts, foraging enthusiasts, and people inte
 ### Data Feeds
 https://www.kaggle.com/datasets/benedictusjason/edible-and-poisonous-mushroom-classification
 https://www.kaggle.com/datasets/mdhasanahmad/12-mushroom-species-dataset?resource=download
-https://www.kaggle.com/datasets/benedictusjason/edible-and-poisonous-mushroom-classification
 
 ### Storyboard
 https://canva.link/pbi6jcuj2u5rf6o
