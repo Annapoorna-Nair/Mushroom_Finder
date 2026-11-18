@@ -151,6 +151,14 @@ coverage*.info
 *.coverage
 *.coveragexml
 
+# OS and editor temporary files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.tmp
+*.swp
+
 # NCrunch
 _NCrunch_*
 .*crunch*.local.xml

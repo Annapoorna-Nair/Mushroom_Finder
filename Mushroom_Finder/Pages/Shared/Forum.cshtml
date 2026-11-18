@@ -1,47 +1,88 @@
-﻿@page
+﻿@page "/Forum"
 @model Mushroom_Finder.Pages.Shared.ForumModel
 @{
-    ViewData["Title"] = "Forum";
+    ViewData["Title"] = "Community Forum";
+    ViewData["UseFluidContainer"] = true;
 }
 
-<section class="panel-frame">
-
-    <aside class="forum-sidebar">
-
-        <div class="panel forum-actions">
-            <div class="forum-actions-logo">
-                @* mascot image goes here later *@
-            </div>
-            <button type="button" class="action-btn">ID Request</button>
-            <button type="button" class="action-btn">Just Sharing</button>
-        </div>
-
-        <div class="panel forum-intro">
-            <p>
-                This is the go to place to ID mushrooms and see what others are finding.
-                Make sure to put your general location in [square brackets] in your post title.
+<main class="forum-page">
+    <div class="forum-layout">
+        <aside class="forum-sidebar" aria-label="Forum browsing information">
+            <h1>Community Forum</h1>
+            <p class="forum-description">
+                Browse identification requests and shared mushroom finds from the community.
             </p>
-        </div>
 
-    </aside>
+            <nav class="forum-categories" aria-label="Post categories">
+                <button type="button" class="forum-category forum-category-selected" data-category="All posts" aria-pressed="true">All posts</button>
+                <button type="button" class="forum-category" data-category="ID Request" aria-pressed="false">ID Request</button>
+                <button type="button" class="forum-category" data-category="Just Sharing" aria-pressed="false">Just Sharing</button>
+            </nav>
 
-    <div class="panel forum-feed">
+            <div class="forum-location-guidance">
+                <h2>Location guidance</h2>
+                <p>
+                    When relevant, put a general location in square brackets in the post title,
+                    for example <strong>[Pacific Northwest]</strong>. This is guidance, not a precise-location requirement.
+                </p>
+            </div>
+        </aside>
 
-        <article class="post">
-            <div class="post-user">
-                <span class="post-user-name">User</span>
-                <span class="post-avatar"></span>
+        <section class="forum-feed" aria-label="Community posts">
+            <p id="forum-result-status" class="forum-result-status" role="status" aria-live="polite" aria-atomic="true">
+                Showing @Model.Posts.Count post@(Model.Posts.Count == 1 ? "" : "s").
+            </p>
+
+            <div class="forum-post-list">
+                @foreach (var post in Model.Posts)
+                {
+                    <article class="forum-post" data-post-category="@post.Category">
+                        <header class="forum-post-header">
+                            <span class="forum-post-category">@post.Category</span>
+                            <h2>@post.Title</h2>
+                            <p class="forum-post-meta">
+                                <span>@post.AuthorDisplayName</span>
+                                <span aria-hidden="true"> &middot; </span>
+                                <time>@post.DisplayDate</time>
+                            </p>
+                        </header>
+
+                        <p class="forum-post-body">@post.Body</p>
+
+                        @if (post.ShowSafetyDisclaimer)
+                        {
+                            <p class="forum-safety-disclaimer">
+                                Community discussion does not verify species identification or edibility.
+                            </p>
+                        }
+                    </article>
+                }
             </div>
 
-            <div class="post-image">
-                @* post photo goes here later *@
-            </div>
+            @if (Model.Posts.Count == 0)
+            {
+                <div class="forum-empty-state" data-empty-state="full-feed">
+                    <h2>No posts to show</h2>
+                    <p>There are no community posts available yet.</p>
+                </div>
+            }
+            else
+            {
+                <div class="forum-empty-state" data-empty-state="full-feed" hidden>
+                    <h2>No posts to show</h2>
+                    <p>There are no community posts available yet.</p>
+                </div>
+            }
 
-            <div class="post-actions">
-                <button type="button" class="action-btn action-btn-small">ID Request</button>
+            <div class="forum-empty-state" data-empty-state="category" hidden>
+                <h2>No matching posts</h2>
+                <p data-empty-category-message>No posts are available in this category.</p>
+                <button type="button" class="forum-category forum-reset-category" data-category="All posts">All posts</button>
             </div>
-        </article>
-
+        </section>
     </div>
+</main>
 
-</section>
+@section Scripts {
+    <script src="~/js/forum.js" asp-append-version="true"></script>
+}

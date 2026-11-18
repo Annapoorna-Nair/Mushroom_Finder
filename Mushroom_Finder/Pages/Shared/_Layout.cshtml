@@ -35,7 +35,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="@(ViewData["UseFluidContainer"] is true ? "container-fluid" : "container")">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
