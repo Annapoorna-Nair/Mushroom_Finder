@@ -1,22 +1,156 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+:root {
+    --mf-nav-olive: #789448;
+    --mf-footer-olive: #5d723b;
+    --mf-page-bg: #e2ebd5;
+    --mf-board-brown: #331c14;
+    --mf-card-cream: #fdf3dc;
+    --mf-pill-sage: #e4edd8;
+    --mf-btn-sage: #b9cba8;
+    --mf-btn-sage-hover: #a5bc91;
+    --mf-danger-pink: #ff8a9b;
+    --mf-text-dark: #1a1a1a;
 }
 
 body {
-  margin-bottom: 60px;
+    background-color: var(--mf-page-bg);
+    color: var(--mf-text-dark);
+    font-family: 'Merriweather', Georgia, serif;
+}
+
+/* Navbar */
+.mf-navbar {
+    background-color: var(--mf-nav-olive);
+    padding: 0.4rem 0;
+}
+
+.mf-logo {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+}
+
+.mf-brand-text {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+    color: var(--mf-text-dark);
+    line-height: 1;
+}
+
+.mf-nav-pill {
+    background-color: var(--mf-pill-sage);
+    color: var(--mf-text-dark) !important;
+    border-radius: 14px;
+    padding: 0.45rem 1.25rem !important;
+    font-size: 1.05rem;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+    .mf-nav-pill:hover,
+    .mf-nav-pill:focus {
+        background-color: var(--mf-card-cream);
+        transform: translateY(-1px);
+    }
+
+/* Main Dark Brown Container */
+.mf-board {
+    background-color: var(--mf-board-brown);
+    border-radius: 14px;
+}
+
+/* Inner Cream Cards */
+.mf-card {
+    background-color: var(--mf-card-cream);
+    border-radius: 14px;
+    padding: 1.5rem;
+    height: 100%;
+}
+
+/* Form Inputs (Identify Page) */
+.mf-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    margin-left: 0.4rem;
+    color: var(--mf-text-dark);
+}
+
+.mf-input {
+    background-color: var(--mf-pill-sage);
+    border: 1.5px solid var(--mf-text-dark);
+    border-radius: 14px;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.95rem;
+}
+
+    .mf-input:focus {
+        background-color: #eef5e5;
+        border-color: var(--mf-nav-olive);
+        box-shadow: 0 0 0 0.2rem rgba(120, 148, 72, 0.25);
+    }
+
+.mf-btn-search {
+    background-color: var(--mf-btn-sage);
+    color: var(--mf-text-dark);
+    border: none;
+    border-radius: 12px;
+    padding: 0.6rem 2rem;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+}
+
+    .mf-btn-search:hover {
+        background-color: var(--mf-btn-sage-hover);
+        color: var(--mf-text-dark);
+    }
+
+/* Identify Result Card */
+.mf-result-img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.mf-species-title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 0.15rem;
+}
+
+.mf-scientific-name {
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-bottom: 1.25rem;
+}
+
+.mf-badge-poisonous {
+    background-color: var(--mf-danger-pink);
+    color: var(--mf-text-dark);
+    font-size: 1.5rem;
+    padding: 0.45rem 1.25rem;
+    border-radius: 12px;
+    display: block;
+    width: 100%;
+}
+
+.mf-badge-edible {
+    background-color: var(--mf-btn-sage);
+    color: var(--mf-text-dark);
+    font-size: 1.5rem;
+    padding: 0.45rem 1.25rem;
+    border-radius: 12px;
+    display: block;
+    width: 100%;
+}
+
+.mf-info-heading {
+    font-size: 1.45rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Footer */
+.mf-footer {
+    background-color: var(--mf-footer-olive);
+    min-height: 52px;
 }
