@@ -1,448 +1,126 @@
 ﻿@page
 @model Mushroom_Finder.Pages.IdentifierModel
 @{
+    ViewData["Title"] = "Mushroom Identifier";
 }
 
-<!--
-    Quetsions
--->
-
-<div class="identifer-container">
-    <!-- Left Pannel -->
-    <div class="question-panel"
-    style="
-    width:35%;
-    background:#eee7d8;
-    padding:20px;
-    border-radius:20px;
-    ">
-
-        <form>
-
-            <!--All questions here-->
-
-            <h2>Color</h2>
-            <details>
-                <summary>Select up to 2 Colors</summary>
-
-                <label>
-                    <input type="checkbox" name="color" value="Red">
-                    Red
-                </label>
-
-                <label>
-                    <input type="checkbox" name="color" value="Orange">
-                    Orange
-                </label>
-
-                <label>
-                    <input type="checkbox" name="color" value="Yellow">
-                    Yellow
-                </label>
-
-                <label>
-                    <input type="checkbox" name="color" value="Green">
-                    Green
-                </label>
-                <label>
-                    <input type="checkbox" name="color" value="Green">
-                    Blue
-                </label>
-                <label>
-                    <input type="checkbox" name="color" value="Green">
-                    Purple
-                </label>
-                <label>
-                    <input type="checkbox" name="color" value="Green">
-                    Pink
-                </label>
-                <label>
-                    <input type="checkbox" name="color" value="Green">
-                    Brown
-                </label>
-                <label>
-                    <input type="checkbox" name="color" value="Green">
-                    White
-                </label>
-                <label>
-                    <input type="checkbox" name="color" value="Green">
-                    Gray
-                </label>
-                <label>
-                    <input type="checkbox" name="color" value="Green">
-                    Black
-                </label>
-            </details>
-
-            <h2>Where did you find it?</h2>
-            <details>
-                <summary>Select...</summary>
-
-                <label>
-                    <input type="checkbox" name="location" value="On a tree">
-                    On a tree
-                </label>
-
-                <label>
-                    <input type="checkbox" name="location" value="On the ground">
-                    On the ground
-                </label>
-
-                <label>
-                    <input type="checkbox" name="location" value="On a tree root">
-                    On a tree root
-                </label>
-
-                <label>
-                    <input type="checkbox" name="location" value="On a stump, log, or dead tree">
-                    On a stump, log, or dead tree
-                </label>
-            </details>
-
-            <h2>Cap Shape</h2>
-            <details>
-                <summary>Select...</summary>
-
-                <label>
-                    <input type="radio" name="cap shape" value="Funnel">
-                    Funnel
-                </label>
-
-                <label>
-                    <input type="radio" name="cap shape" value="Cone-shaped">
-                    Cone-shaped
-                </label>
-
-                <label>
-                    <input type="radio" name="cap shape" value="Bell shaped">
-                    Bell shaped
-                </label>
-
-                <label>
-                    <input type="radio" name="cap shape" value="Half-Egg">
-                    Half-Egg
-                </label>
-
-                <label>
-                    <input type="radio" name="cap shape" value="Round">
-                    Round
-                </label>
-
-                <label>
-                    <input type="radio" name="cap shape" value="Flat">
-                    Flat
-                </label>
-
-                <label>
-                    <input type="radio" name="cap shape" value="Central knob">
-                    Central knob
-                </label>
-
-                <label>
-                    <input type="radio" name="cap shape" value="Depression">
-                    Depression
-                </label>
-            </details>
-
-            <h2>Height</h2>
-            <details>
-                <summary>Select...</summary>
-
-                <label>
-                    <input type="radio" name="height" value="Short">
-                    Short
-                </label>
-
-                <label>
-                    <input type="radio" name="height" value="Medium">
-                    Medium
-                </label>
-
-                <label>
-                    <input type="radio" name="height" value="Tall">
-                    Tall
-                </label>
-            </details>
-
-            <h2>Width</h2>
-            <details>
-                <summary>Select...</summary>
-
-                <label>
-                    <input type="radio" name="width" value="Thin">
-                    Thin
-                </label>
-
-                <label>
-                    <input type="radio" name="width" value="Medium">
-                    Medium
-                </label>
-
-                <label>
-                    <input type="radio" name="width" value="Wide">
-                    Wide
-                </label>
-            </details>
-
-            <h2>Distinctive Features</h2>
-            <details>
-                <summary>Select...</summary>
-
-                <label>
-                    <input type="radio" name="special features" value="Leaking red liquid">
-                    Leaking red liquid
-                </label>
-
-                <label>
-                    <input type="radio" name="special features" value="Cap looks like a net">
-                    Cap looks like a net
-                </label>
-
-                <label>
-                    <input type="radio" name="special features" value="Has small dots on cap">
-                    Has small dots on cap
-                </label>
-            </details>
-
-        <!--
-            Questions past this point will be structure to only appear if the results
-            bring up more than 1 result and further clarification is needed. Will be handled later
-            once we connect the database so I can actually see if it works.
-        -->
-
-            <h2>Gills</h2>
-            <details>
-                <summary>Select...</summary>
-
-                <label>
-                    <input type="radio" name="gills" value="Adnate">
-                    Adnate
-                </label>
-
-                <label>
-                    <input type="radio" name="gills" value="Adnexed">
-                    Adnexed
-                </label>
-
-                <label>
-                    <input type="radio" name="gills" value="Decurrent">
-                    Decurrent
-                </label>
-
-                <label>
-                    <input type="radio" name="gills" value="Emarginate">
-                    Emarginate
-                </label>
-
-                <label>
-                    <input type="radio" name="gills" value="Free">
-                    Free
-                </label>
-
-                <label>
-                    <input type="radio" name="gills" value="Seceding">
-                    Seceding
-                </label>
-
-                <label>
-                    <input type="radio" name="gills" value="Sinuate">
-                    Sinuate
-                </label>
-
-                <label>
-                    <input type="radio" name="gills" value="Subedecurrent">
-                    Subdecurrent
-                </label>
-            </details>
-
-            <h2>Stem Shape</h2>
-            <details>
-                <summary>Select...</summary>
-
-                <label>
-                    <input type="radio" name="stem shape" value="Equal">
-                    Equal
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Tapering">
-                    Tapering
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Club">
-                    Club
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Bulbous">
-                    Bulbous
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Swollen">
-                    Swollen
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Tapering">
-                    Tapering
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Rooting">
-                    Rooting
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Saccate">
-                    Saccate
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Friable">
-                    Friable
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Bare">
-                    Bare
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Loose">
-                    Loose
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Felt-like">
-                    Felt-like
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Skirt">
-                    Skirt
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Flaring">
-                    Flaring
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Cortina">
-                    Cortina
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Sheathing">
-                    Sheathing
-                </label>
-
-                <label>
-                    <input type="radio" name="stem shap" value="Double">
-                    Double
-                </label>
-
-            </details>
-
-            <h2>Clustering</h2>
-            <details>
-                <summary>Select...</summary>
-
-                <label>
-                    <input type="radio" name="clustering" value="Has many similar mushrooms near it">
-                    Has many similar mushrooms near it
-                </label>
-
-                <label>
-                    <input type="radio" name="clustering" value="Has very few similar mushrooms near it">
-                    Has very few similar mushrooms near it
-                </label>
-
-
-            </details>
-
-            <button type="submit"> Search</button>
-
-        </form>
-    </div>
-    
-<!--Right pannel-->
-
-    <div class="result-panel"
-    style="
-    width:65%;
-    background:#eee7d8;
-    padding:20px;
-    border-radius:20px;
-    ">
-
-        <div class="result-top"
-        style="
-        display:flex;
-        gap:25px;
-        align-items:flex-start;
-        ">
-
-            <img src="https://s7d9.scene7.com/is/image/daltile/AO_MN44_24x24_Gray_Polished?PRODUCTIMAGE"
-                 class="result-image" 
-                 style="
-                width:450px;
-                height:300px;
-                object-fit:cover;
-                 " />
-
-            <div class="species-info"
-            style="
-             flex:1;
-             text-align:center;
-            ">
-                <h1 style="
-                 margin-top:0;
-                 font-size:3rem;">
-                    Species
-                </h1>
-
-                <h3 style="
-                margin-bottom:30px;">Scientific Name</h3>
-
-                <div class="edibility-box"
-                     style="background:#f3a5a5;
-                    border-radius:20px;
-                    padding:20px;
-                    font-size:2rem;
-                    font-weight:bold;">
-                    Poisonous
-                </div>
+<div style="min-height:calc(100vh - 180px); padding:22px; background:#e9edd8; font-family:Georgia, 'Times New Roman', serif;">
+    <div class="identifier-layout" style="display:grid; grid-template-columns:minmax(300px, 38%) minmax(0, 62%); gap:28px; max-width:1580px; margin:0 auto; padding:24px; background:#351f19; border:3px solid #6d32ff; border-radius:4px; box-sizing:border-box;">
+        <section style="background:#fff1dc; border-radius:22px; padding:22px 18px; min-height:650px; box-sizing:border-box;">
+            <form>
+                <h1 style="margin:0 0 16px; font-size:2rem; font-weight:400;">Mushroom Finder</h1>
+                <p style="margin:0 0 18px; font-size:1rem;">Describe what you see from a safe distance.</p>
+
+                <h2 style="margin:10px 4px 5px; font-size:1.55rem; font-weight:400;">Color</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e8d5; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Select up to 2 colors</summary>
+                    <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:5px; margin-top:10px;">
+                        <label><input type="checkbox" name="color" value="Red"> Red</label>
+                        <label><input type="checkbox" name="color" value="Orange"> Orange</label>
+                        <label><input type="checkbox" name="color" value="Yellow"> Yellow</label>
+                        <label><input type="checkbox" name="color" value="Green"> Green</label>
+                        <label><input type="checkbox" name="color" value="Blue"> Blue</label>
+                        <label><input type="checkbox" name="color" value="Purple"> Purple</label>
+                        <label><input type="checkbox" name="color" value="Pink"> Pink</label>
+                        <label><input type="checkbox" name="color" value="White"> White</label>
+                        <label><input type="checkbox" name="color" value="Brown"> Brown</label>
+                        <label><input type="checkbox" name="color" value="Black"> Black</label>
+                        <label><input type="checkbox" name="color" value="Gray"> Gray</label>
+                    </div>
+                </details>
+
+                <h2 style="margin:16px 4px 5px; font-size:1.55rem; font-weight:400;">Location</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e8d5; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Select a location</summary>
+                    <label><input type="radio" name="location" value="On a tree"> On a tree</label><br>
+                    <label><input type="radio" name="location" value="On the ground"> On the ground</label><br>
+                    <label><input type="radio" name="location" value="On a tree root"> On a tree root</label><br>
+                    <label><input type="radio" name="location" value="On a dead tree"> On a dead tree</label>
+                </details>
+
+                <h2 style="margin:16px 4px 5px; font-size:1.55rem; font-weight:400;">Height</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e8d5; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Select a height</summary>
+                    <label><input type="radio" name="height" value="Short"> Short</label><br>
+                    <label><input type="radio" name="height" value="Medium"> Medium</label><br>
+                    <label><input type="radio" name="height" value="Tall"> Tall</label>
+                </details>
+
+                <h2 style="margin:16px 4px 5px; font-size:1.55rem; font-weight:400;">Width</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e8d5; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Select a width</summary>
+                    <label><input type="radio" name="width" value="Thin"> Thin</label><br>
+                    <label><input type="radio" name="width" value="Medium"> Medium</label><br>
+                    <label><input type="radio" name="width" value="Fat"> Fat</label>
+                </details>
+
+                <h2 style="margin:16px 4px 5px; font-size:1.55rem; font-weight:400;">Cap shape</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e8d5; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Select a cap shape</summary>
+                    <label><input type="radio" name="cap shape" value="Funnel"> Funnel</label><br>
+                    <label><input type="radio" name="cap shape" value="Cone"> Cone</label><br>
+                    <label><input type="radio" name="cap shape" value="Bell"> Bell</label><br>
+                    <label><input type="radio" name="cap shape" value="Half-egg"> Half-egg</label><br>
+                    <label><input type="radio" name="cap shape" value="Round"> Round</label><br>
+                    <label><input type="radio" name="cap shape" value="Flat"> Flat</label><br>
+                    <label><input type="radio" name="cap shape" value="Central knob"> Central knob</label><br>
+                    <label><input type="radio" name="cap shape" value="Depression"> Depression</label>
+                </details>
+
+                <h2 style="margin:16px 4px 5px; font-size:1.25rem; font-weight:400;">Additional characteristics</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e8d5; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Gills, stem shape, and clustering</summary>
+                    <p style="margin-bottom:5px;">Gills</p>
+                    @foreach (var value in new[] { "Adnate", "Adnexed", "Decurrent", "Emarginate", "Free", "Seceding", "Sinuate", "Subcurrent", "False" })
+                    {
+                        <label><input type="radio" name="gills" value="@value"> @value</label><br>
+                    }
+                    <p style="margin:10px 0 5px;">Stem shape</p>
+                    @foreach (var value in new[] { "Equal", "Tapering", "Club", "Bulbous", "Swollen", "Rooting", "Saccate", "Friable", "Bare", "Loose", "Felt-like", "Skirt", "Flaring", "Cortina", "Sheathing", "Double" })
+                    {
+                        <label><input type="radio" name="stem shape" value="@value"> @value</label><br>
+                    }
+                    <p style="margin:10px 0 5px;">Clustering</p>
+                    <label><input type="radio" name="clustering" value="Has many similar mushrooms nearby"> Has many similar mushrooms nearby</label><br>
+                    <label><input type="radio" name="clustering" value="Has very few similar mushrooms nearby"> Has very few similar mushrooms nearby</label>
+                </details>
+
+                <h2 style="margin:16px 4px 5px; font-size:1.25rem; font-weight:400;">Distinctive features</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e8d5; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Select distinctive features</summary>
+                    <label><input type="radio" name="special features" value="Leaking red liquid"> Leaking red liquid</label><br>
+                    <label><input type="radio" name="special features" value="Cap looks like a net"> Cap looks like a net</label><br>
+                    <label><input type="radio" name="special features" value="Has small dots on cap"> Has small dots on cap</label>
+                </details>
+
+                <button type="submit" style="display:block; margin:20px auto 0; padding:12px 42px; border:0; border-radius:20px; background:#bfd0ac; color:#38251e; font:1.25rem Georgia, serif; cursor:pointer;">Search</button>
+            </form>
+        </section>
+
+        <section style="background:#fff1dc; border-radius:22px; padding:10px; min-height:650px; box-sizing:border-box;">
+            <div style="font-size:1rem; margin-bottom:2px;">Mushroom identification result</div>
+            <div style="width:58%; margin-left:42%; text-align:center;">
+                <h2 style="margin:0; font-size:3rem; font-weight:400;">Species</h2>
+                <p style="margin:8px 0 28px; font-size:1.25rem; font-weight:600;">Scientific Name</p>
+                <div style="width:215px; margin-left:auto; padding:12px 14px; border-radius:0 20px 20px 0; background:#ff9fa4; font-size:2rem; text-align:left; box-sizing:border-box;">Poisonous</div>
             </div>
-
-        </div>
-
-        <div class="info-section"
-             style="margin-top:30px;
-            font-size:2.5rem;">
-            Info / Poison Control Number
-        </div>
-
+            <div style="margin-top:108px; padding:24px 12px; font-size:2.2rem;">Info / Poison Control Number</div>
+        </section>
     </div>
-
 </div>
 
+<style>
+    @@media (max-width: 900px) {
+        .identifier-layout {
+            grid-template-columns: 1fr !important;
+        }
+    }
 
-
-
-
-<div style="display:flex; gap:20px;">
-
-    <div style="background:red; width:300px; height:300px;">
-        LEFT
-    </div>
-
-    <div style="background:blue; width:300px; height:300px;">
-        RIGHT
-    </div>
-
-</div>
+    @@media (max-width: 600px) {
+        .identifier-layout section {
+            min-height: auto !important;
+        }
+    }
+</style>
 
 
