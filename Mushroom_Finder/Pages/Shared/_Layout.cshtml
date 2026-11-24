@@ -3,50 +3,67 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Mushroom_Finder</title>
+    <title>@ViewData["Title"] - Mushroom Finder</title>
+
+    <!-- Google Fonts: Handwritten logo font + Classic serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 & Custom Styles -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Mushroom_Finder.styles.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Mushroom_Finder</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+<body class="d-flex flex-column min-vh-100">
+    <header class="mf-navbar">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid px-3 px-md-4">
+                <a class="navbar-brand d-flex align-items-center gap-2" asp-page="/Identify">
+                    <img src="~/images/logo.PNG" alt="Mushroom Finder Logo" class="mf-logo" />
+                    <span class="mf-brand-text">Mushroom Finder</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+
+                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                    <ul class="navbar-nav gap-2 mt-3 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link mf-nav-pill" asp-page="/Identify">Identify</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link mf-nav-pill" asp-page="/Forum">Forum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mf-nav-pill" asp-page="/Collection">Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mf-nav-pill" asp-page="/SignIn">Sign In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mf-nav-pill" asp-page="/Register">Register</a>
                         </li>
                     </ul>
-                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2026 - Mushroom_Finder - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <main class="container-fluid px-3 px-md-4 my-3 flex-grow-1 d-flex">
+        <div class="mf-board w-100 p-3 p-md-4">
+            @RenderBody()
+        </div>
+    </main>
+
+    <footer class="mf-footer mt-auto">
+        <div class="container-fluid px-4 py-3 text-center text-white-50 small">
+            &copy; @DateTime.Now.Year Mushroom Finder
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
