@@ -1,0 +1,221 @@
+﻿@page
+@model Mushroom_Finder.Pages.IdentifierModel
+@{
+    ViewData["Title"] = "Mushroom Identifier";
+}
+
+<div style="background:#e9edd8; font-family:Georgia, 'Times New Roman', serif;">
+    <div class="identifier-layout" style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:42px; width:calc(100vw - 48px); max-width:none; margin-left:calc((100% - 100vw) / 2 + 24px); padding:24px; background:#351f19; border:3px solid #6d32ff; border-radius:4px; box-sizing:border-box;">
+        <section style="background:#fff1dc; border-radius:22px; padding:22px 18px; min-height:650px; box-sizing:border-box;">
+            <form>
+                <h1 style="margin:0 0 16px; font-size:2rem; font-weight:400;">Describe What You See</h1>
+
+                <h2 style="margin:10px 4px 5px; font-size:1.55rem; font-weight:400;">Color</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e7d4; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Select up to 2 colors</summary>
+                    <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:5px; margin-top:10px;">
+                        <label><input type="checkbox" name="color" value="Red"> Red</label>
+                        <label><input type="checkbox" name="color" value="Orange"> Orange</label>
+                        <label><input type="checkbox" name="color" value="Yellow"> Yellow</label>
+                        <label><input type="checkbox" name="color" value="Green"> Green</label>
+                        <label><input type="checkbox" name="color" value="Blue"> Blue</label>
+                        <label><input type="checkbox" name="color" value="Purple"> Purple</label>
+                        <label><input type="checkbox" name="color" value="Pink"> Pink</label>
+                        <label><input type="checkbox" name="color" value="White"> White</label>
+                        <label><input type="checkbox" name="color" value="Brown"> Brown</label>
+                        <label><input type="checkbox" name="color" value="Black"> Black</label>
+                        <label><input type="checkbox" name="color" value="Gray"> Gray</label>
+                    </div>
+                </details>
+
+                <h2 style="margin:16px 4px 5px; font-size:1.55rem; font-weight:400;">Location</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e7d4; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Select a location</summary>
+                    <label><input type="radio" name="location" value="On a tree"> On a tree</label><br>
+                    <label><input type="radio" name="location" value="On the ground"> On the ground</label><br>
+                    <label><input type="radio" name="location" value="On a tree root"> On a tree root</label><br>
+                    <label><input type="radio" name="location" value="On a dead tree"> On a dead tree</label>
+                </details>
+
+                <h2 style="margin:16px 4px 5px; font-size:1.55rem; font-weight:400;">Height</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e7d4; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Select a height</summary>
+                    <label><input type="radio" name="height" value="Short"> Short</label><br>
+                    <label><input type="radio" name="height" value="Medium"> Medium</label><br>
+                    <label><input type="radio" name="height" value="Tall"> Tall</label>
+                </details>
+
+                <h2 style="margin:16px 4px 5px; font-size:1.55rem; font-weight:400;">Width</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e7d4; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Select a width</summary>
+                    <label><input type="radio" name="width" value="Thin"> Thin</label><br>
+                    <label><input type="radio" name="width" value="Medium"> Medium</label><br>
+                    <label><input type="radio" name="width" value="Fat"> Fat</label>
+                </details>
+
+                <h2 style="margin:16px 4px 5px; font-size:1.55rem; font-weight:400;">Cap shape</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e7d4; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Select a cap shape</summary>
+                    <label><input type="radio" name="cap shape" value="Funnel"> Funnel</label> <details class="feature-help" data-feature-category="cap-shape" data-feature-value="Funnel"><summary>ⓘ</summary><div class="feature-placeholder"><img alt="Funnel cap shape example"><span>Funnel picture</span></div></details><br>
+                    <label><input type="radio" name="cap shape" value="Cone"> Cone</label> <details class="feature-help" data-feature-category="cap-shape" data-feature-value="Cone"><summary>ⓘ</summary><div class="feature-placeholder"><img alt="Cone cap shape example"><span>Cone picture</span></div></details><br>
+                    <label><input type="radio" name="cap shape" value="Bell"> Bell</label> <details class="feature-help" data-feature-category="cap-shape" data-feature-value="Bell"><summary>ⓘ</summary><div class="feature-placeholder"><img alt="Bell cap shape example"><span>Bell picture</span></div></details><br>
+                    <label><input type="radio" name="cap shape" value="Half-egg"> Half-egg</label> <details class="feature-help" data-feature-category="cap-shape" data-feature-value="Half-egg"><summary>ⓘ</summary><div class="feature-placeholder"><img alt="Half-egg cap shape example"><span>Half-egg picture</span></div></details><br>
+                    <label><input type="radio" name="cap shape" value="Round"> Round</label> <details class="feature-help" data-feature-category="cap-shape" data-feature-value="Round"><summary>ⓘ</summary><div class="feature-placeholder"><img alt="Round cap shape example"><span>Round picture</span></div></details><br>
+                    <label><input type="radio" name="cap shape" value="Flat"> Flat</label> <details class="feature-help" data-feature-category="cap-shape" data-feature-value="Flat"><summary>ⓘ</summary><div class="feature-placeholder"><img alt="Flat cap shape example"><span>Flat picture</span></div></details><br>
+                    <label><input type="radio" name="cap shape" value="Central knob"> Central knob</label> <details class="feature-help" data-feature-category="cap-shape" data-feature-value="Central knob"><summary>ⓘ</summary><div class="feature-placeholder"><img alt="Central knob cap shape example"><span>Central knob picture</span></div></details><br>
+                    <label><input type="radio" name="cap shape" value="Depression"> Depression</label> <details class="feature-help" data-feature-category="cap-shape" data-feature-value="Depression"><summary>ⓘ</summary><div class="feature-placeholder"><img alt="Depression cap shape example"><span>Depression picture</span></div></details>
+                </details>
+
+                <h2 style="margin:16px 4px 5px; font-size:1.25rem; font-weight:400;">Additional characteristics</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e7d4; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Gills, stem shape, and clustering</summary>
+                    <p style="margin-bottom:5px;">Gills</p>
+                    @foreach (var value in new[] { "Adnate", "Adnexed", "Decurrent", "Emarginate", "Free", "Seceding", "Sinuate", "Subcurrent", "False" })
+                    {
+                        <label><input type="radio" name="gills" value="@value"> @value</label> <details class="feature-help" data-feature-category="gills" data-feature-value="@value"><summary>ⓘ</summary><div class="feature-placeholder"><img alt="@value gills example"><span>@value picture</span></div></details><br>
+                    }
+                    <p style="margin:10px 0 5px;">Stem shape</p>
+                    @foreach (var value in new[] { "Equal", "Tapering", "Club", "Bulbous", "Swollen", "Rooting", "Saccate", "Friable", "Bare", "Loose", "Felt-like", "Skirt", "Flaring", "Cortina", "Sheathing", "Double" })
+                    {
+                        <label><input type="radio" name="stem shape" value="@value"> @value</label> <details class="feature-help" data-feature-category="stem-shape" data-feature-value="@value"><summary>ⓘ</summary><div class="feature-placeholder"><img alt="@value stem shape example"><span>@value picture</span></div></details><br>
+                    }
+                    <p style="margin:10px 0 5px;">Clustering</p>
+                    <label><input type="radio" name="clustering" value="Has many similar mushrooms nearby"> Has many similar mushrooms nearby</label><br>
+                    <label><input type="radio" name="clustering" value="Has very few similar mushrooms nearby"> Has very few similar mushrooms nearby</label>
+                </details>
+
+                <h2 style="margin:16px 4px 5px; font-size:1.25rem; font-weight:400;">Distinctive features</h2>
+                <details style="border:2px solid #171717; border-radius:20px; background:#e5e7d4; padding:10px 14px;">
+                    <summary style="cursor:pointer;">Select distinctive features</summary>
+                    <label><input type="radio" name="special features" value="Leaking red liquid"> Leaking red liquid</label><br>
+                    <label><input type="radio" name="special features" value="Cap looks like a net"> Cap looks like a net</label><br>
+                    <label><input type="radio" name="special features" value="Has small dots on cap"> Has small dots on cap</label>
+                </details>
+
+                <button type="submit" style="display:block; margin:20px auto 0; padding:12px 42px; border:0; border-radius:20px; background:#bfd0ac; color:#38251e; font:1.25rem Georgia, serif; cursor:pointer;">Search</button>
+            </form>
+        </section>
+
+        <section style="background:#fff1dc; border-radius:22px; padding:10px; min-height:650px; box-sizing:border-box;">
+            <div style="display:grid; grid-template-columns:minmax(0, 58%) minmax(0, 42%); align-items:start;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Amanita_muscaria_2011_G1.JPG" alt="Mushroom identification result" style="width:100%; height:270px; object-fit:cover; border:4px solid #6d32ff; box-sizing:border-box;" />
+                <div style="padding:8px 10px; text-align:center;">
+                    <h2 style="margin:0; font-size:3rem; font-weight:400;">Species</h2>
+                    <p style="margin:8px 0 20px; font-size:1.25rem; font-weight:600;">Scientific Name</p>
+                    <div style="width:100%; padding:12px 14px; border-radius:0 20px 20px 0; background:#ff9fa4; font-size:2rem; text-align:left; box-sizing:border-box;">Poisonous</div>
+                </div>
+            </div>
+            <div style="padding:24px 12px; font-size:2.2rem;">Info / Poison Control Number</div>
+        </section>
+    </div>
+</div>
+
+<style>
+    .feature-help {
+        display: inline-block;
+        position: relative;
+        margin-left: 4px;
+        vertical-align: middle;
+    }
+
+    .feature-help summary {
+        list-style: none;
+        cursor: pointer;
+        color: #333;
+        font-family: Arial, sans-serif;
+        font-size: .9rem;
+        font-weight: bold;
+    }
+
+    .feature-help summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .feature-placeholder {
+        position: absolute;
+        z-index: 5;
+        width: 140px;
+        height: 95px;
+        margin-top: 4px;
+        padding-top: 36px;
+        border: 1px solid #777;
+        background: #b5b5b5;
+        color: #333;
+        text-align: center;
+        font: .8rem Arial, sans-serif;
+        box-sizing: border-box;
+    }
+
+    .feature-placeholder img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .feature-placeholder span {
+        position: absolute;
+        inset: 36px 0 0;
+    }
+
+    @@media (max-width: 900px) {
+        .identifier-layout {
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+    @@media (max-width: 600px) {
+        .identifier-layout section {
+            min-height: auto !important;
+        }
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.feature-help[data-feature-category]').forEach(function (featureHelp) {
+        featureHelp.addEventListener('toggle', function () {
+            if (!featureHelp.open) {
+                return;
+            }
+
+            const category = featureHelp.dataset.featureCategory;
+            const value = featureHelp.dataset.featureValue.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const image = featureHelp.querySelector('.feature-placeholder img');
+            if (image) {
+                image.src = '/images/identifier/' + category + '/' + value + '.jpg';
+                image.onload = function () {
+                    image.nextElementSibling.style.display = 'none';
+                };
+                image.onerror = function () {
+                    image.style.display = 'none';
+                };
+            }
+            document.querySelectorAll('.feature-help[data-feature-category="' + category + '"]').forEach(function (otherFeatureHelp) {
+                if (otherFeatureHelp !== featureHelp) {
+                    otherFeatureHelp.removeAttribute('open');
+                }
+            });
+        });
+    });
+
+    document.querySelectorAll('input[name="color"]').forEach(function (colorInput) {
+        colorInput.addEventListener('change', function () {
+            const selectedColors = document.querySelectorAll('input[name="color"]:checked');
+            const colorInputs = document.querySelectorAll('input[name="color"]');
+            const limitMessage = document.getElementById('color-limit-message');
+            const limitReached = selectedColors.length >= 2;
+
+            colorInputs.forEach(function (input) {
+                input.disabled = limitReached && !input.checked;
+            });
+
+            if (limitMessage) {
+                limitMessage.textContent = limitReached
+                    ? 'Two colors selected. Unselect a color to choose a different one.'
+                    : 'Choose no more than two colors.';
+            }
+        });
+    });
+</script>
+
+
