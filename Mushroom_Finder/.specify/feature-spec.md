@@ -114,7 +114,7 @@ As a user, I want my submitted characteristics to remain available during my ses
 - **FR-010**: The Identifier page MUST provide a width control that allows exactly one selection.
 - **FR-011**: The supported width options MUST be:
   - Thin
-  - Fat
+  - Wide
   - Medium
 - **FR-012**: The system MUST validate all submitted values against the supported option lists.
 - **FR-013**: The system MUST reject submissions that contain fewer than one or more than two colors.
