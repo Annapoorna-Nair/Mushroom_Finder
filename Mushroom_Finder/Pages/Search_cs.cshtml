@@ -1,4 +1,126 @@
 ﻿@page
 @model Mushroom_Finder.Pages.Search_csModel
 @{
+    ViewData["Title"] = "Search";
 }
+
+<div class="search-page-wrapper">
+    <!-- Top Cream Search Banner -->
+    <section class="search-banner">
+        <h1 class="search-title">Search some mushrooms</h1>
+        <p class="search-subtitle">Find out edible mushrooms in every region and season</p>
+
+        <div class="search-controls">
+            <input type="text"
+                   id="mushroomSearchInput"
+                   class="search-bar-input"
+                   placeholder="Search by mushroom name..."
+                   aria-label="Search mushrooms" />
+
+            <div class="filter-row">
+                <select id="regionFilter" class="filter-pill" aria-label="Filter by Region">
+                    <option value="">All Regions</option>
+                    <option value="north america">North America</option>
+                    <option value="europe">Europe</option>
+                    <option value="asia">Asia</option>
+                </select>
+
+                <select id="seasonFilter" class="filter-pill" aria-label="Filter by Season">
+                    <option value="">All Seasons</option>
+                    <option value="spring">Spring</option>
+                    <option value="summer">Summer</option>
+                    <option value="fall">Fall</option>
+                    <option value="winter">Winter</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mushroom Cards Grid -->
+    <section class="mushroom-grid" id="mushroomGrid">
+        <article class="mushroom-card"
+                 data-name="lions mane"
+                 data-region="north america, asia"
+                 data-season="summer, fall">
+            <div class="mushroom-img-box">
+                <img src="~/images/lions-mane.jpg" alt="Lions Mane" />
+            </div>
+            <div class="mushroom-label-box">
+                <div class="mushroom-name">Lions Mane</div>
+                <p class="mushroom-meta"><strong>Region:</strong> North America, Asia</p>
+                <p class="mushroom-meta"><strong>Season:</strong> Late Summer – Fall</p>
+            </div>
+        </article>
+
+        <article class="mushroom-card"
+                 data-name="wood blewit"
+                 data-region="europe, north america"
+                 data-season="fall, winter">
+            <div class="mushroom-img-box">
+                <img src="~/images/wood-blewit.jpg" alt="Wood Blewit" />
+            </div>
+            <div class="mushroom-label-box">
+                <div class="mushroom-name">Wood Blewit</div>
+                <p class="mushroom-meta"><strong>Region:</strong> Europe, North America</p>
+                <p class="mushroom-meta"><strong>Season:</strong> Fall – Early Winter</p>
+            </div>
+        </article>
+
+        <article class="mushroom-card"
+                 data-name="amethyst deceiver"
+                 data-region="europe, north america"
+                 data-season="summer, fall">
+            <div class="mushroom-img-box">
+                <img src="~/images/amethyst-deceiver.jpg" alt="Amethyst Deceiver" />
+            </div>
+            <div class="mushroom-label-box">
+                <div class="mushroom-name">Amethyst Deceiver</div>
+                <p class="mushroom-meta"><strong>Region:</strong> Europe, North America</p>
+                <p class="mushroom-meta"><strong>Season:</strong> Summer – Fall</p>
+            </div>
+        </article>
+    </section>
+
+    <p id="noResultsMessage" class="no-results-msg" style="display: none;">
+        No mushrooms match your search and filter selection.
+    </p>
+</div>
+
+<script>
+    const searchInput = document.getElementById('mushroomSearchInput');
+    const regionFilter = document.getElementById('regionFilter');
+    const seasonFilter = document.getElementById('seasonFilter');
+    const cards = document.querySelectorAll('.mushroom-card');
+    const noResultsMsg = document.getElementById('noResultsMessage');
+
+    function filterMushrooms() {
+        const query = searchInput.value.toLowerCase().trim();
+        const selectedRegion = regionFilter.value.toLowerCase();
+        const selectedSeason = seasonFilter.value.toLowerCase();
+
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const name = card.dataset.name.toLowerCase();
+            const regions = card.dataset.region.toLowerCase();
+            const seasons = card.dataset.season.toLowerCase();
+
+            const matchesName = name.includes(query);
+            const matchesRegion = !selectedRegion || regions.includes(selectedRegion);
+            const matchesSeason = !selectedSeason || seasons.includes(selectedSeason);
+
+            if (matchesName && matchesRegion && matchesSeason) {
+                card.style.display = 'flex';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        noResultsMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', filterMushrooms);
+    regionFilter.addEventListener('change', filterMushrooms);
+    seasonFilter.addEventListener('change', filterMushrooms);
+</script>

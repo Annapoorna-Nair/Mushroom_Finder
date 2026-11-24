@@ -154,3 +154,162 @@ body {
     background-color: var(--mf-footer-olive);
     min-height: 52px;
 }
+/* ===== Search Page Full-Fit Layout ===== */
+.search-page-wrapper {
+    background-color: #361f14; /* Dark brown main container */
+    border-radius: 8px;
+    padding: 24px 32px 48px;
+    width: 100%;
+    min-height: calc(100vh - 150px); /* Stretches to fill viewport between header and footer */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Top Cream Banner */
+.search-banner {
+    background-color: #fdf4e3;
+    border-radius: 16px;
+    padding: 24px 28px 28px;
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.search-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.3rem;
+    font-weight: 500;
+    color: #111111;
+    margin: 0 0 6px 0;
+}
+
+.search-subtitle {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    color: #222222;
+    margin: 0 0 16px 0;
+}
+
+.search-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.search-bar-input {
+    width: 100%;
+    max-width: 560px;
+    height: 42px;
+    border-radius: 999px;
+    background-color: #e4eadc;
+    border: 2px solid #2b2b2b;
+    padding: 0 20px;
+    font-size: 1rem;
+    outline: none;
+}
+
+    .search-bar-input:focus {
+        box-shadow: 0 0 0 3px rgba(107, 116, 105, 0.35);
+    }
+
+.filter-row {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.filter-pill {
+    background-color: #6b7469;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 28px;
+    min-width: 230px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 0.95rem;
+    text-align: center;
+    text-align-last: center;
+    cursor: pointer;
+    appearance: none;
+}
+
+    .filter-pill:hover {
+        background-color: #5b6359;
+    }
+
+/* 3-Column Mushroom Cards */
+.mushroom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 300px));
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.mushroom-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.mushroom-img-box {
+    background-color: #fdf4e3;
+    border-radius: 16px;
+    padding: 14px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+    .mushroom-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+.mushroom-label-box {
+    background-color: #fdf4e3;
+    border-radius: 16px;
+    padding: 14px 16px;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    color: #111111;
+}
+
+/* Responsive stacking on smaller screens */
+@media (max-width: 900px) {
+    .mushroom-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+    }
+}
+
+.mushroom-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #111111;
+}
+
+.mushroom-meta {
+    font-size: 0.9rem;
+    color: #361f14;
+    margin: 2px 0;
+    line-height: 1.35;
+}
+
+.no-results-msg {
+    text-align: center;
+    color: #fdf4e3;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    margin-top: 24px;
+}

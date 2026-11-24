@@ -7,6 +7,9 @@ namespace Mushroom_Finder.Pages
     {
         public void OnGet()
         {
+
+
+
         }
     }
 }
