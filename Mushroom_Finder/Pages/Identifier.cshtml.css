@@ -1,0 +1,247 @@
+.identifier-page {
+    width: 100%;
+    color: #382E25;
+    font-family: 'Inter', sans-serif;
+}
+
+.identifier-intro {
+    margin: 0 0 1.5rem;
+}
+
+.identifier-intro h1 {
+    margin: 0 0 0.4rem;
+    color: #382E25;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.identifier-intro p {
+    max-width: 46rem;
+    margin: 0;
+    color: #706052;
+}
+
+.identifier-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    min-width: 0;
+}
+
+.identifier-form-card,
+.identifier-results-card {
+    min-width: 0;
+    box-sizing: border-box;
+    border: 1px solid #E2D5C4;
+    border-radius: 16px;
+    background: #FFFAF0;
+    color: #382E25;
+    box-shadow: 0 3px 12px rgb(73 56 45 / 10%);
+}
+
+.identifier-form-card {
+    padding: 1.5rem;
+}
+
+.identifier-results-card {
+    padding: 1rem;
+}
+
+.identifier-form-title {
+    margin: 0 0 1.25rem;
+    color: #382E25;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.identifier-section-title {
+    margin: 1.25rem 0 0.5rem;
+    color: #382E25;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.identifier-options {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid #E2D5C4;
+    border-radius: 12px;
+    background: #E5EBDA;
+    color: #382E25;
+}
+
+.identifier-options summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.identifier-options summary:focus-visible,
+.feature-help summary:focus-visible,
+.identifier-search-button:focus-visible {
+    outline: 3px solid #795B43;
+    outline-offset: 3px;
+}
+
+.identifier-options label {
+    line-height: 1.8;
+}
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.25rem 0.75rem;
+    margin-top: 0.65rem;
+}
+
+.option-group-label {
+    margin: 0.75rem 0 0.25rem;
+    color: #706052;
+    font-weight: 600;
+}
+
+.identifier-search-button {
+    display: block;
+    margin: 1.5rem auto 0;
+    min-height: 46px;
+    padding: 0 2rem;
+    border: 0;
+    border-radius: 999px;
+    background: #795B43;
+    color: #FFFAF0;
+    font: 600 0.95rem 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.identifier-search-button:hover {
+    background: #624936;
+    transform: translateY(-1px);
+}
+
+.identifier-result-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 58%) minmax(0, 42%);
+    align-items: start;
+}
+
+.identifier-result-image {
+    display: block;
+    width: 100%;
+    height: 270px;
+    border: 0;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.identifier-result-copy {
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+}
+
+.identifier-species {
+    margin: 0;
+    color: #382E25;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 600;
+}
+
+.identifier-scientific-name {
+    margin: 0.5rem 0 1.25rem;
+    color: #706052;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.identifier-safety-status {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    background: #E7B8B2;
+    color: #713C35;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.identifier-info {
+    padding: 1.5rem 0.75rem 0.5rem;
+    color: #706052;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.feature-help {
+    display: inline-block;
+    position: relative;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.feature-help summary {
+    list-style: none;
+    cursor: pointer;
+    color: #382E25;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.feature-help summary::-webkit-details-marker {
+    display: none;
+}
+
+.feature-placeholder {
+    position: absolute;
+    z-index: 5;
+    width: 140px;
+    height: 95px;
+    margin-top: 4px;
+    padding-top: 36px;
+    border: 1px solid #E2D5C4;
+    border-radius: 8px;
+    background: #F1E6D5;
+    color: #382E25;
+    font-size: 0.8rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.feature-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.feature-placeholder span {
+    position: absolute;
+    inset: 36px 0 0;
+}
+
+@media (max-width: 900px) {
+    .identifier-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .identifier-form-card,
+    .identifier-results-card {
+        padding: 1rem;
+    }
+
+    .identifier-result-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .identifier-result-image {
+        height: auto;
+        max-height: 270px;
+    }
+
+    .color-grid {
+        grid-template-columns: 1fr;
+    }
+}

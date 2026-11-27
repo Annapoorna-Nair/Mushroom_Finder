@@ -1,17 +1,35 @@
 .forum-page {
-    --forum-brown: #34271d;
-    --forum-olive: #46522c;
-    --forum-cream: #f5efdf;
-    --forum-card: #fffaf0;
-    --forum-border: #c9bea3;
+    --forum-brown: #382E25;
+    --forum-olive: #E5EBDA;
+    --forum-cream: #FFFAF0;
+    --forum-card: #FFFAF0;
+    --forum-border: rgba(73, 56, 45, 0.22);
 
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     padding: clamp(0.75rem, 2vw, 1.25rem);
     border-radius: 20px;
-    background: var(--forum-brown);
-    color: var(--forum-cream);
+    background: #C3AD96;
+    color: var(--forum-brown);
+    font-family: 'Inter', sans-serif;
+}
+
+.forum-intro {
+    margin: 0 0 1.5rem;
+}
+
+.forum-intro h1 {
+    margin: 0 0 0.4rem;
+    color: var(--forum-brown);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    letter-spacing: -0.02em;
+}
+
+.forum-intro p {
+    max-width: 46rem;
+    margin: 0;
+    color: var(--forum-brown);
 }
 
 .forum-layout {
@@ -21,31 +39,37 @@
     min-width: 0;
 }
 
-.forum-sidebar,
 .forum-post {
     min-width: 0;
     border: 1px solid var(--forum-border);
     border-radius: 18px;
     background: var(--forum-card);
     color: var(--forum-brown);
-    box-shadow: 0 4px 14px rgb(52 39 29 / 8%);
+    box-shadow: 0 3px 12px rgb(73 56 45 / 10%);
 }
 
 .forum-sidebar {
     align-self: start;
-    padding: 1.1rem;
+    min-width: 0;
 }
 
-.forum-sidebar h1 {
-    margin: 0 0 0.75rem;
+.forum-sidebar-heading {
+    min-height: 1.5rem;
+    margin: 0 0 1rem;
     color: var(--forum-brown);
-    font-size: 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
     overflow-wrap: anywhere;
 }
 
-.forum-description {
-    margin-bottom: 1rem;
-    overflow-wrap: anywhere;
+.forum-sidebar-card {
+    min-width: 0;
+    padding: 1.1rem;
+    border: 1px solid var(--forum-border);
+    border-radius: 18px;
+    background: var(--forum-card);
+    color: var(--forum-brown);
+    box-shadow: 0 3px 12px rgb(73 56 45 / 10%);
 }
 
 .forum-categories {
@@ -59,23 +83,23 @@
     min-height: 44px;
     width: 100%;
     padding: 0.55rem 0.8rem;
-    border: 2px solid var(--forum-olive);
+    border: 0;
     border-radius: 8px;
-    background: var(--forum-card);
-    color: var(--forum-olive);
+    background: var(--forum-olive);
+    color: var(--forum-brown);
     font-weight: 700;
     text-align: left;
 }
 
 .forum-category:hover {
-    background: var(--forum-olive);
-    color: #ffffff;
+    background: var(--forum-brown);
+    color: var(--forum-cream);
 }
 
 .forum-category-selected {
-    background: var(--forum-olive);
-    color: #ffffff;
-    box-shadow: inset 0 0 0 2px #ffffff;
+    background: var(--forum-brown);
+    color: var(--forum-cream);
+    box-shadow: inset 0 0 0 2px var(--forum-cream);
 }
 
 .forum-category-selected::before {
@@ -122,7 +146,7 @@
 .forum-result-status {
     min-height: 1.5rem;
     margin: 0;
-    color: var(--forum-cream);
+    color: var(--forum-brown);
     font-weight: 700;
 }
 
@@ -158,12 +182,23 @@
 
 .forum-post-category {
     display: inline-block;
-    border: 1px solid var(--forum-olive);
+    border: 1px solid transparent;
     border-radius: 999px;
     padding: 0.2rem 0.55rem;
-    color: var(--forum-olive);
+    background: var(--forum-olive);
+    color: var(--forum-brown);
     font-weight: 700;
     overflow-wrap: anywhere;
+}
+
+.forum-category-id {
+    background: #DCE7D1;
+    color: #30472B;
+}
+
+.forum-category-sharing {
+    background: #EBDDC8;
+    color: #63472F;
 }
 
 .forum-post-meta {
@@ -184,7 +219,6 @@
 .forum-post-body,
 .forum-safety-disclaimer,
 .forum-post-meta,
-.forum-description,
 .forum-location-guidance {
     overflow-wrap: anywhere;
 }
@@ -192,14 +226,14 @@
 .forum-safety-disclaimer {
     margin: 1rem 0 0;
     padding: 0.75rem;
-    border-left: 4px solid var(--forum-olive);
+    border-left: 4px solid #795B43;
     border-radius: 0 8px 8px 0;
-    background: #e9eadb;
+    background: #F1E6D5;
 }
 
 @media (min-width: 768px) {
     .forum-layout {
-        grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);
+        grid-template-columns: 280px minmax(0, 1fr);
         align-items: start;
     }
 

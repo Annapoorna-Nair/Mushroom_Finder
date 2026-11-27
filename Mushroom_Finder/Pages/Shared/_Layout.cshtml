@@ -5,20 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Mushroom Finder</title>
 
-    <!-- Google Fonts: Handwritten logo font + Classic serif -->
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@600&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 & Custom Styles -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Mushroom_Finder.styles.css" asp-append-version="true" />
 </head>
-<body class="d-flex flex-column min-vh-100">
+    @{ var currentPage = ViewContext.RouteData.Values["page"]?.ToString(); }
+    <body class="d-flex flex-column min-vh-100">
     <header class="mf-navbar">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid px-3 px-md-4">
-                <a class="navbar-brand d-flex align-items-center gap-2" asp-page="/Identify">
+                <a class="navbar-brand d-flex align-items-center gap-3" asp-page="/Identifier">
                     <img src="~/images/logo.PNG" alt="Mushroom Finder Logo" class="mf-logo" />
                     <span class="mf-brand-text">Mushroom Finder</span>
                 </a>
@@ -29,21 +33,21 @@
                 </button>
 
                 <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-                    <ul class="navbar-nav gap-2 mt-3 mt-lg-0">
+                    <ul class="navbar-nav gap-3 mt-3 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link mf-nav-pill" asp-page="/Identify">Identify</a>
+                            <a class="nav-link mf-nav-pill @(currentPage == "/Identifier" ? "mf-nav-active" : "")" asp-page="/Identifier" aria-current="@(currentPage == "/Identifier" ? "page" : null)">Identify</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mf-nav-pill" asp-page="/Forum">Forum</a>
+                            <a class="nav-link mf-nav-pill @(currentPage == "/Forum" ? "mf-nav-active" : "")" asp-page="/Forum" aria-current="@(currentPage == "/Forum" ? "page" : null)">Forum</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mf-nav-pill" asp-page="/Collection">Search</a>
+                            <a class="nav-link mf-nav-pill @(currentPage == "/Search_cs" ? "mf-nav-active" : "")" asp-page="/Search_cs" aria-current="@(currentPage == "/Search_cs" ? "page" : null)">Search</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mf-nav-pill" asp-page="/SignIn">Sign In</a>
+                            <a class="nav-link mf-nav-pill @(currentPage == "/Account/Login" ? "mf-nav-active" : "")" asp-area="Identity" asp-page="/Account/Login" aria-current="@(currentPage == "/Account/Login" ? "page" : null)">Sign In</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mf-nav-pill" asp-page="/Register">Register</a>
+                            <a class="nav-link mf-nav-pill mf-register-link @(currentPage == "/Account/Register" ? "mf-nav-active" : "")" asp-area="Identity" asp-page="/Account/Register" aria-current="@(currentPage == "/Account/Register" ? "page" : null)">Register</a>
                         </li>
                     </ul>
                 </div>
@@ -51,14 +55,14 @@
         </nav>
     </header>
 
-    <main class="container-fluid px-3 px-md-4 my-3 flex-grow-1 d-flex">
+    <main class="container-fluid mf-main flex-grow-1">
         <div class="mf-board w-100 p-3 p-md-4">
             @RenderBody()
         </div>
     </main>
 
     <footer class="mf-footer mt-auto">
-        <div class="container-fluid px-4 py-3 text-center text-white-50 small">
+        <div class="container-fluid px-4 py-3 text-center text-white small">
             &copy; @DateTime.Now.Year Mushroom Finder
         </div>
     </footer>

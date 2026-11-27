@@ -1,67 +1,146 @@
 :root {
-    --mf-nav-olive: #789448;
-    --mf-footer-olive: #5d723b;
-    --mf-page-bg: #e2ebd5;
-    --mf-board-brown: #331c14;
-    --mf-card-cream: #fdf3dc;
-    --mf-pill-sage: #e4edd8;
-    --mf-btn-sage: #b9cba8;
-    --mf-btn-sage-hover: #a5bc91;
-    --mf-danger-pink: #ff8a9b;
-    --mf-text-dark: #1a1a1a;
+    --mf-nav-olive: #C9D5B5;
+    --mf-footer-olive: #795B43;
+    --mf-page-bg: #F5F2E9;
+    --mf-board-brown: #C3AD96;
+    --mf-card-cream: #FFFAF0;
+    --mf-pill-sage: #E5EBDA;
+    --mf-btn-sage: #795B43;
+    --mf-btn-sage-hover: #624936;
+    --mf-danger-pink: #C98778;
+    --mf-text-dark: #382E25;
 }
 
 body {
     background-color: var(--mf-page-bg);
     color: var(--mf-text-dark);
-    font-family: 'Merriweather', Georgia, serif;
+    font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+button, input, select, textarea {
+    font-family: 'Inter', sans-serif;
 }
 
 /* Navbar */
 .mf-navbar {
     background-color: var(--mf-nav-olive);
-    padding: 0.4rem 0;
+    padding: 0.65rem 0;
+}
+
+.mf-main {
+    display: flex;
+    flex-direction: column;
+    padding-right: 24px;
+    padding-left: 24px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 992px) {
+    .mf-navbar {
+        min-height: 110px;
+        display: flex;
+        align-items: center;
+    }
+
+    .mf-navbar > .navbar {
+        width: 100%;
+    }
+
+    .mf-navbar .navbar > .container-fluid {
+        width: 100%;
+        padding-right: 36px !important;
+        padding-left: 36px !important;
+    }
+
+    .mf-navbar .navbar-collapse {
+        flex: 1 1 auto;
+        min-width: 0;
+        margin-left: auto;
+    }
+
+    .mf-navbar .navbar-nav {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .mf-main {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
 }
 
 .mf-logo {
-    height: 44px;
-    width: auto;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
 }
 
+@media (min-width: 992px) {
+    .mf-logo {
+        width: 80px;
+        height: 80px;
+    }
+}
+
 .mf-brand-text {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Lora', Georgia, serif;
     font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
     color: var(--mf-text-dark);
     line-height: 1;
 }
 
 .mf-nav-pill {
-    background-color: var(--mf-pill-sage);
-    color: var(--mf-text-dark) !important;
-    border-radius: 14px;
-    padding: 0.45rem 1.25rem !important;
-    font-size: 1.05rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    min-width: 92px;
+    background-color: var(--mf-footer-olive);
+    color: var(--mf-card-cream) !important;
+    border: 0;
+    border-radius: 999px;
+    padding: 0 1.15rem !important;
+    font-size: 0.95rem;
+    font-weight: 500;
     text-align: center;
-    transition: background-color 0.2s ease, transform 0.15s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
     .mf-nav-pill:hover,
     .mf-nav-pill:focus {
-        background-color: var(--mf-card-cream);
+        background-color: var(--mf-btn-sage-hover);
+        color: var(--mf-card-cream) !important;
         transform: translateY(-1px);
+    }
+
+    .mf-nav-pill.mf-nav-active {
+        background-color: #49382D;
+        font-weight: 600;
+    }
+
+    .mf-nav-pill:focus-visible {
+        outline: 3px solid var(--mf-card-cream);
+        outline-offset: 3px;
     }
 
 /* Main Dark Brown Container */
 .mf-board {
+    flex: 1 1 auto;
     background-color: var(--mf-board-brown);
-    border-radius: 14px;
+    color: var(--mf-text-dark);
+    border-radius: 18px;
 }
 
 /* Inner Cream Cards */
 .mf-card {
     background-color: var(--mf-card-cream);
-    border-radius: 14px;
+    color: var(--mf-text-dark);
+    border-radius: 16px;
     padding: 1.5rem;
     height: 100%;
 }
@@ -76,23 +155,23 @@ body {
 
 .mf-input {
     background-color: var(--mf-pill-sage);
-    border: 1.5px solid var(--mf-text-dark);
-    border-radius: 14px;
+    border: 1px solid rgba(73, 56, 45, 0.35);
+    border-radius: 10px;
     padding: 0.55rem 0.9rem;
     font-size: 0.95rem;
 }
 
     .mf-input:focus {
         background-color: #eef5e5;
-        border-color: var(--mf-nav-olive);
-        box-shadow: 0 0 0 0.2rem rgba(120, 148, 72, 0.25);
+        border-color: var(--mf-footer-olive);
+        box-shadow: 0 0 0 0.2rem rgba(121, 91, 67, 0.2);
     }
 
 .mf-btn-search {
     background-color: var(--mf-btn-sage);
-    color: var(--mf-text-dark);
+    color: var(--mf-card-cream);
     border: none;
-    border-radius: 12px;
+    border-radius: 999px;
     padding: 0.6rem 2rem;
     font-size: 0.95rem;
     transition: background-color 0.2s ease;
@@ -100,7 +179,7 @@ body {
 
     .mf-btn-search:hover {
         background-color: var(--mf-btn-sage-hover);
-        color: var(--mf-text-dark);
+        color: var(--mf-card-cream);
     }
 
 /* Identify Result Card */
@@ -134,7 +213,7 @@ body {
 }
 
 .mf-badge-edible {
-    background-color: var(--mf-btn-sage);
+    background-color: var(--mf-pill-sage);
     color: var(--mf-text-dark);
     font-size: 1.5rem;
     padding: 0.45rem 1.25rem;
@@ -151,16 +230,20 @@ body {
 
 /* Footer */
 .mf-footer {
-    background-color: var(--mf-footer-olive);
-    min-height: 52px;
+    background-color: #C9D5B5;
+    color: #382E25;
+    min-height: 48px;
+}
+
+.mf-footer .text-white {
+    color: #382E25 !important;
 }
 /* ===== Search Page Full-Fit Layout ===== */
 .search-page-wrapper {
-    background-color: #361f14; /* Dark brown main container */
-    border-radius: 8px;
+    background-color: var(--mf-board-brown);
+    border-radius: 16px;
     padding: 24px 32px 48px;
     width: 100%;
-    min-height: calc(100vh - 150px); /* Stretches to fill viewport between header and footer */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -169,7 +252,7 @@ body {
 
 /* Top Cream Banner */
 .search-banner {
-    background-color: #fdf4e3;
+    background-color: var(--mf-card-cream);
     border-radius: 16px;
     padding: 24px 28px 28px;
     text-align: center;
@@ -177,17 +260,15 @@ body {
 }
 
 .search-title {
-    font-family: Georgia, "Times New Roman", serif;
     font-size: 2.3rem;
     font-weight: 500;
-    color: #111111;
+    color: var(--mf-text-dark);
     margin: 0 0 6px 0;
 }
 
 .search-subtitle {
-    font-family: Georgia, "Times New Roman", serif;
     font-size: 1.05rem;
-    color: #222222;
+    color: var(--mf-text-dark);
     margin: 0 0 16px 0;
 }
 
@@ -203,8 +284,8 @@ body {
     max-width: 560px;
     height: 42px;
     border-radius: 999px;
-    background-color: #e4eadc;
-    border: 2px solid #2b2b2b;
+    background-color: var(--mf-pill-sage);
+    border: 1px solid rgba(73, 56, 45, 0.35);
     padding: 0 20px;
     font-size: 1rem;
     outline: none;
@@ -223,13 +304,12 @@ body {
 }
 
 .filter-pill {
-    background-color: #6b7469;
-    color: #ffffff;
-    border: none;
+    background-color: var(--mf-footer-olive);
+    color: var(--mf-card-cream);
+    border: 1px solid var(--mf-footer-olive);
     border-radius: 999px;
     padding: 10px 28px;
     min-width: 230px;
-    font-family: Georgia, "Times New Roman", serif;
     font-size: 0.95rem;
     text-align: center;
     text-align-last: center;
@@ -238,7 +318,7 @@ body {
 }
 
     .filter-pill:hover {
-        background-color: #5b6359;
+        background-color: #624936;
     }
 
 /* 3-Column Mushroom Cards */
@@ -257,7 +337,7 @@ body {
 }
 
 .mushroom-img-box {
-    background-color: #fdf4e3;
+    background-color: var(--mf-card-cream);
     border-radius: 16px;
     padding: 14px;
     aspect-ratio: 1 / 1;
@@ -275,13 +355,12 @@ body {
     }
 
 .mushroom-label-box {
-    background-color: #fdf4e3;
+    background-color: var(--mf-card-cream);
     border-radius: 16px;
     padding: 14px 16px;
     text-align: center;
-    font-family: Georgia, "Times New Roman", serif;
     font-size: 1.15rem;
-    color: #111111;
+    color: var(--mf-text-dark);
 }
 
 /* Responsive stacking on smaller screens */
@@ -296,20 +375,19 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 6px;
-    color: #111111;
+    color: var(--mf-text-dark);
 }
 
 .mushroom-meta {
     font-size: 0.9rem;
-    color: #361f14;
+    color: var(--mf-text-dark);
     margin: 2px 0;
     line-height: 1.35;
 }
 
 .no-results-msg {
     text-align: center;
-    color: #fdf4e3;
-    font-family: Georgia, "Times New Roman", serif;
+    color: var(--mf-text-dark);
     font-size: 1.15rem;
     margin-top: 24px;
 }
