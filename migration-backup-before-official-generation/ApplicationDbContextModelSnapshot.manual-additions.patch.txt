@@ -1,0 +1,10 @@
+Backup of the manual additions previously made to Mushroom_Finder/Data/Migrations/ApplicationDbContextModelSnapshot.cs.
+
+The manual migration added these model entries:
+- Mushroom_Finder.Models.MushroomEntity mapped to Mushrooms.
+- Mushroom_Finder.Models.ForumPost mapped to ForumPosts.
+- ForumPost.Author -> IdentityUser relationship with AuthorId, required, Cascade delete.
+
+The original Identity-only snapshot remains available from the existing
+00000000000000_CreateIdentitySchema.Designer.cs BuildTargetModel implementation
+and repository history/checkpoint.
